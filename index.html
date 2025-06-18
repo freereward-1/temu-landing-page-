@@ -3,68 +3,69 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Temu Gift</title>
+  <title>Temu Reward - Android Only</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
       font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
-    .container {
-      background-color: #111;
-      border-radius: 20px;
-      padding: 20px;
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px;
       text-align: center;
-      max-width: 420px;
-      width: 95%;
+      max-width: 400px;
+      width: 90%;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
-    .container img {
+    .card img {
       width: 100%;
-      border-radius: 12px;
-    }
-
-    h1 {
-      color: #FFD700;
-      font-size: 24px;
-      margin-top: 20px;
-    }
-
-    p {
-      color: #ddd;
-      font-size: 16px;
+      border-radius: 10px;
       margin-bottom: 20px;
     }
 
+    h1 {
+      font-size: 22px;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #ccc;
+      margin: 10px 0 20px;
+    }
+
+    .notice {
+      font-weight: bold;
+      color: #00ff99;
+      margin-bottom: 15px;
+    }
+
     .btn {
-      background-color: #FFD700;
-      color: #000;
-      padding: 14px 28px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
       display: inline-block;
-      cursor: pointer;
+      background: #ffcc00;
+      color: #000;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
       animation: pulse 1.5s infinite;
-      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #e6c200;
-    }
-
-    .countdown {
-      margin-top: 15px;
-      color: #ff4d4d;
-      font-size: 16px;
+      background-color: #e6b800;
     }
 
     @keyframes pulse {
@@ -72,25 +73,31 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+
+    .countdown {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ff4d4d;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://raw.githubusercontent.com/freereward-1/temu-landing-page-/main/assets/temu-giftcard.png" alt="Temu Gift Card"/>
-    <h1>🎁 Get Your Free Temu Gift Now!</h1>
-    <p>Complete a quick task to unlock your exclusive Temu reward.</p>
-    <a href="https://singingfiles.com/show.php?l=0&u=2407601&id=67722" class="btn" target="_blank">Claim Now</a>
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/freereward-1/temu-landing-page-/main/assets/IMG_20250617_092230.png" alt="Temu Gift">
+    <h1>🎁 Get Your Free Temu Gift!</h1>
+    <p>Complete a quick task to unlock your exclusive reward.</p>
+    <div class="notice">📱 Android Users Only</div>
+    <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2407601&id=67722" target="_blank">🎯 Claim Now</a>
     <div class="countdown" id="timer">Offer expires in: 03:00</div>
   </div>
 
   <script>
-    // 3 minute countdown
     let time = 180;
     const timer = document.getElementById('timer');
     const interval = setInterval(() => {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      timer.textContent = `Offer expires in: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      const min = Math.floor(time / 60);
+      const sec = time % 60;
+      timer.textContent = `Offer expires in: ${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
       time--;
       if (time < 0) {
         clearInterval(interval);
