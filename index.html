@@ -3,77 +3,90 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Temu Gift Reward</title>
+  <title>Temu Giveaway</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       background: #000;
       font-family: Arial, sans-serif;
       color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
     }
+
     .container {
-      max-width: 480px;
-      margin: 0 auto;
+      max-width: 420px;
+      background: #1a1a1a;
+      border-radius: 12px;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
     }
+
+    .flag {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
     img {
       width: 100%;
+      max-height: 350px;
+      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 20px;
     }
-    .notice {
-      font-size: 18px;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
       color: #ffcc00;
-      margin-bottom: 10px;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #fff;
-    }
+
     p {
-      color: #ccc;
-      margin-bottom: 20px;
+      font-size: 15px;
+      color: #ddd;
     }
-    .btn {
-      background: #ffc107;
-      color: #000;
-      padding: 14px 28px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      animation: pulse 1.5s infinite;
-    }
-    .btn:hover {
-      background: #e0a800;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+
     .countdown {
-      font-size: 16px;
-      margin-top: 15px;
+      margin-top: 10px;
+      font-size: 15px;
       color: #ff4d4d;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffcc00, #ff9900);
+      color: #000;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #ffe066, #ffae42);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="notice">🇺🇸 Android Users Only</div>
-    <img src="https://raw.githubusercontent.com/freereward-1/temu-landing-page-/main/assets/Screenshot_20250618_180138.jpg" alt="Temu Reward">
-    <h1>🎁 Claim Your Free Temu Gift</h1>
-    <p>Complete a quick task to unlock your exclusive Temu reward.</p>
-    <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2407601&id=67722" target="_blank">Claim Now</a>
+    <div class="flag">📱 Android Users Only</div>
+    <img src="https://raw.githubusercontent.com/freereward-1/temu-landing-page-/main/assets/Screenshot_20250618_180138.jpg" alt="Temu Giveaway">
+    <h2>🎁 Get Your Free Temu Gift!</h2>
+    <p>Complete a quick task to unlock your exclusive reward. Limited-time offer!</p>
     <div class="countdown" id="timer">Offer expires in: 03:00</div>
+    <a class="button" href="https://singingfiles.com/show.php?l=0&u=2407601&id=67722" target="_blank">Claim Now</a>
   </div>
 
   <script>
+    // 3 minute countdown
     let time = 180;
     const timer = document.getElementById('timer');
     const interval = setInterval(() => {
